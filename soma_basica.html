@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma Básica</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Soma Básica</h2>
+    <hr>
+    <p>Soma entre 10 e 20 = <input type="button" value="calcular" onclick="calcular()"></p>
+    
+    <div id="area"></div>
+    <script>
+        function calcular(){
+            var area = document.getElementById('area')
+            var r = (10 + 20)
+            area.innerHTML = `A soma entre 10 e 20 é igual a ${r}`
+        }
+    </script>
+    
+</body>
+</html>
