@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de um Círculo</title>
+</head>
+<body>
+    <h2 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Área de um circulo</h2>
+    <hr>
+    <p>Informe o raio do círculo: <input type="number" name="n1" id="n1" placeholder="informe o raio"> <input type="button" value="calcular" onclick="calcular()"></p>
+    <div id="area"></div>
+    <script>
+        function calcular(){
+            var num = document.getElementById('n1')
+            var area = document.getElementById('area')
+            var num1 = Number(num.value)
+            var r = (3.14*num1**2)
+            area.innerHTML = `O raio da circunferência é de ${num1} 
+            e a área da circunferência é de ${r}.`
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
