@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+</head>
+<body>
+    <h2 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Ano Bissexto</h2>
+    <hr>
+    <p>Digite um ano: <input type="text" name="n1" id="n1" placeholder="informe um ano"> <input type="button" value="verificar" onclick="verificar()"></p>
+    <div id="area"></div>
+    <script>
+        function verificar(){
+            var num = document.getElementById('n1')
+            var area = document.getElementById('area')
+            var num1 = Number(num.value)
+            if (num1%4 == 0 && num1%100 == 0 && num1%400 == 0) {
+                area.innerHTML = `O ano é bissexto.`
+            } else if (num1%4 == 0 && num1%100 == 0 && num1%400 != 0) {
+                area.innerHTML = `O ano não é bissexto.`
+            } else if (num1%4 == 0) {
+                area.innerHTML = `O ano é bissexto.`
+            } else if (num1%4 != 0) {
+                area.innerHTML = `O ano não é bissexto.`
+            }
+
+
+        }
+    </script>
+    
+</body>
+</html>
