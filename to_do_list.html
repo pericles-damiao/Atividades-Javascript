@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <style>
+        body{
+            background: rgb(233, 64, 22);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;font-family: Arial, Helvetica, sans-serif;font-size:xx-large;
+    border: 2px solid;border-radius: 10px;background-color: aliceblue;margin-left: 35%;margin-right: 35%;padding: 10px;">To do List</h2>
+    <input type="text" name="" id="tarefa" style="margin-left: 38%;margin-top: 5%;width: 20%;height: 20px;">
+    <input type="button" value="Adicionar Tarefa" id="botao" style="margin-left: 10px;height: 26px;" onclick="addtarefa()">
+    
+    <main id="lista"><div id="area" class="tarefanome" style="margin-left: 42%;margin-top: 2%;"></div></main>
+    
+    <script>
+     var input = document.getElementById('tarefa')
+     var botao = document.getElementById('botao')
+     var area = document.getElementById('area')
+     var main = document.getElementById('lista')   
+    function addtarefa(){
+        var texto = input.value;
+       
+        if( (texto !=='') && (texto !==null) && (texto !==undefined) ){
+            var novatarefa = `<div class="tarefanome" style="margin-top: 1%;font-weight:bold;font-family: Arial;border: 2px solid;border-radius: 6px;background-color: white;
+            margin-right: 73%;text-align: center"> ${texto} </div><input type="checkbox" name="" id="">`
+            area.innerHTML += novatarefa;
+            input.value = '';
+            input.focus();
+            
+
+        }
+    }
+    </script>
+</body>
+</html>
