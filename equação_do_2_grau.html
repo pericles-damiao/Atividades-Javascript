@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de equação do 2° grau</title>
+</head>
+<body>
+    <h2>Calculadora de Equação do 2° Grau</h2>
+    <hr>
+    <input type="number" name="" id="A" placeholder= "Digite o valor de A"><br/><br>
+    <input type="number" name="" id="B" placeholder="Digite o valor de B"><br><br>
+    <input type="number" name="" id="C"placeholder="Digite o valor de C"><br><br>
+    <input type="button" value="calcular"onclick="calcular()">
+    <div id="res"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+
+    <script>
+        function calcular(){
+            var A = document.getElementById('A')
+            var B = document.getElementById('B')
+            var C = document.getElementById('C')
+            var res = document.getElementById('res')
+            var a = Number(A.value)
+            var b = Number(B.value)
+            var c = Number(C.value)
+            var Delta = (b**2)-(4*a*c)
+            var X = ((-b)+Math.sqrt(Delta))/(2*a)
+            var X2 = ((-b)-Math.sqrt(Delta))/(2*a)
+            
+            res.innerText = `O valor de Delta é igual a ${Delta}.`
+            res2.innerText = `O valor de X1 é igual a ${X}`
+            res3.innerText = `O valor de X2 é igual a ${X2}`
+
+
+
+        }
+        
+
+
+
+    </script>
+</body>
+</html>
