@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List 2</title>
+    <style>
+        body{
+            
+            background-image: linear-gradient(rgb(67, 76, 206), rgb(94, 211, 83));
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="font-family: Arial, Helvetica, sans-serif;text-align: center;border: 2px solid;border-radius: 6px;margin-left: 35%;margin-right: 35%;padding: 0.5%;
+    background-color: aliceblue;">To do List 2</h2>
+    <input type="text" name="" id="texto" style="margin-left: 40%;margin-top: 5%;width: 15%;">
+    <button id="add">Adicionar tarefa</button>
+    <button id="deletar">Deletar tarefa</button>
+    <div id="area" style="margin-left: 35%;margin-top: 3%;margin-right: 40%;font-family: Arial, Helvetica, sans-serif;font-weight: bolder;"></div>
+    <script>
+        var tarefa = document.getElementById('texto')
+        var botao = document.getElementById('add')
+        var area = document.getElementById('area')
+        var botao2 = document.getElementById('deletar')
+        
+        botao.addEventListener("click", function() {
+        var novatarefa = tarefa.value;
+        var novop = document.createElement("p");
+        novop.textContent = novatarefa;
+        area.appendChild(novop);
+        inputText.value = "";
+        });
+
+        botao2.addEventListener("click", function() {
+        var p = area.getElementsByTagName("p");
+        if (p.length > 0) {
+            area.removeChild(p[p.length - 1]);
+        }
+        });
+
+        
+    </script>
+</body>
+</html>
