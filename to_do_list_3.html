@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To do List</title>
+    <style>
+        li{
+            border: 2px solid;
+            border-radius: 3px;
+            margin: 1%;
+            background-color: aliceblue;
+            padding: 1%;
+        }
+        body{
+            background-image: linear-gradient(rgb(214, 60, 32), rgb(240, 201, 30));
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        
+        .lixeira{
+            width: 60%;
+        }
+        .lixeira:hover{
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="font-family: Arial, Helvetica, sans-serif;text-align: center;background-color: aliceblue;border: 2px solid;border-radius: 6px;margin-left: 38%;margin-right: 38%">To do List</h2>
+    <input type="text" id="texto" style="margin-left: 39%;width: 20%;margin-top: 3%;">
+    <button id="botao" style="margin-left: 0.5%;">Adicionar tarefa</button>
+    <ul id="lista" style="margin-left: 35%;margin-right: 35%;font-family: Arial, Helvetica, sans-serif;font-weight: bolder;"></ul>
+
+    <script>
+        var texto = document.getElementById("texto");
+        var botao = document.getElementById("botao");
+        var lista = document.getElementById("lista");
+        var tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+
+        function atualizarLista() {
+            lista.innerHTML = "";
+            tarefas.forEach(function(tarefa) {
+                var novoitem = document.createElement("li");
+                novoitem.textContent = tarefa;
+
+                var deletar = document.createElement("button");
+                var lixeira = document.createElement('img');
+                lixeira.src = 'https://img.icons8.com/?size=24&id=FgOBVsURv5ar&format=png';
+                lixeira.className = "lixeira";
+                deletar.appendChild(lixeira);
+                deletar.className = "deletar";
+
+                deletar.addEventListener("click", function() {
+                    tarefas.splice(tarefas.indexOf(tarefa), 1);
+                    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+                    atualizarLista();
+                });
+
+                novoitem.appendChild(deletar);
+                lista.appendChild(novoitem);
+            });
+        }
+        botao.addEventListener("click", function() {
+            var novotexto = texto.value;
+            if (novotexto !== '' && novotexto !== null) {
+                tarefas.push(novotexto);
+                localStorage.setItem("tarefas", JSON.stringify(tarefas));
+                atualizarLista();
+                texto.value = "";
+            }
+        });
+        atualizarLista();
+    </script>
+</body>
+</html>
